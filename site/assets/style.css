@@ -1,0 +1,44 @@
+:root{
+  --bg:#ffffff; --fg:#111827; --accent:#0b63ff;
+}
+*{box-sizing:border-box}
+body{font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;margin:0;color:var(--fg);background:var(--bg);line-height:1.6}
+
+.topnav{border-bottom:1px solid #eee;background:#fff}
+.toplinks{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;padding:14px 16px}
+.toplinks .links{display:flex;gap:28px}
+.toplinks .links a{color:#6b7280;text-decoration:none;font-size:15px;padding:6px 2px}
+.toplinks .home-link{font-weight:700;color:#9ca3af}
+
+.content{max-width:1200px;margin:0 auto;padding:28px 20px}
+.layout{display:flex;gap:48px;align-items:flex-start}
+.sidebar{width:260px}
+.card{padding-left:36px}
+/* wrapper that provides white inner padding and subtle outer ring */
+.photo-wrap{width:180px;height:240px;border-radius:50%/60%;padding:10px;background:#fff;display:block;margin:0 auto;box-shadow:0 10px 30px rgba(2,6,23,0.06);position:relative}
+.photo-wrap::after{content:"";position:absolute;inset:-8px;border-radius:50%/60%;box-shadow:0 0 0 4px rgba(0,0,0,0.03);pointer-events:none}
+.profile-photo{width:100%; height:100%; object-fit:cover; border-radius:50%; display:block}
+.profile.card{overflow:visible}
+.name{font-weight:700;margin:12px 0 4px;text-align:center}
+.pronouns{text-align:center;color:#6b7280;margin:0 0 12px}
+.meta{list-style:none;padding:0;margin:8px 0;color:#6b7280;font-size:14px}
+.meta li{margin:10px 0}
+
+.main{flex:1;padding-top:12px}
+.greeting{font-size:28px;margin:0 0 10px;color:#111827}
+.lead{color:#4b5563;max-width:760px}
+.footer-links{margin-top:28px;color:#9ca3af}
+
+/* Footer */
+footer{background:#f3f4f6;padding:28px 20px;margin-top:32px;border-top:1px solid #e6e9ef;color:#6b7280}
+
+@media (max-width:900px){
+  .layout{flex-direction:column}
+  .sidebar{width:100%}
+  .profile-photo{width:140px;height:170px}
+  .toplinks{justify-content:flex-start}
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0b1220;--fg:#e6eef8}
+  footer{color:#9fb0c8}
+}

@@ -1,0 +1,93 @@
+/* Global styles for Academic Personal Site */
+:root{
+  --bg:#f7f7f7;
+  --container:#ffffff;
+  --fg:#111827;
+  --muted:#6b7280;
+  --link:#2a7ae2;
+  --radius:6px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{display:flex;flex-direction:column;min-height:100vh;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:var(--fg);background:var(--bg);font-size:16px}
+
+/* Centered container */
+.site-container{max-width:1100px;margin:0 auto;padding:30px 20px 0}
+
+/* Top nav */
+.topbar{height:60px;background:#fff;border-bottom:1px solid #e6e6e6;display:flex;align-items:center}
+.topbar .inner{width:100%;max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 12px}
+.brand{font-weight:700;color:var(--muted);text-decoration:none}
+.navlinks{display:flex;gap:20px}
+.navlinks a{color:var(--muted);text-decoration:none;padding:8px 4px;border-radius:4px}
+.navlinks a:hover{background:#f3f4f6;color:var(--fg)}
+
+/* Layout */
+aside,main{margin:0;padding:0}
+.main-layout{display:grid;grid-template-columns:280px 1fr;column-gap:40px;align-items:start}
+.profile-sidebar{width:280px;margin:0;padding:0;position:sticky;top:80px;height:fit-content;align-self:start}
+.page-content{min-width:0;min-height:400px;margin:0;padding:0}
+
+/* Sidebar card */
+.card{background:var(--container);padding:24px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(15,23,42,0.03)}
+.photo-wrap{width:180px;height:240px;border-radius:50%/60%;padding:10px;background:#fff;margin:0;position:relative;box-shadow:0 10px 30px rgba(2,6,23,0.06)}
+.photo-wrap::after{content:"";position:absolute;inset:-8px;border-radius:50%/60%;box-shadow:0 0 0 4px rgba(0,0,0,0.03);pointer-events:none}
+.profile-photo{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
+.name{font-weight:700;text-align:left;margin-top:12px;font-size:28px}
+.pronouns{text-align:left;color:var(--muted);margin:6px 0}
+.meta{list-style:none;padding:0;margin-top:12px;color:var(--muted);font-size:14px}
+.meta li{margin:10px 0;display:flex;align-items:center;gap:8px}
+.meta a{color:var(--link);text-decoration:none}
+
+/* Main content card */
+.content-card{background:var(--container);padding:28px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(15,23,42,0.03)}
+h1{font-size:32px;margin:0 0 12px}
+h2{font-size:24px;margin:18px 0}
+p{color:#374151;line-height:1.6}
+.lead{color:#4b5563}
+
+.footer{margin-top:28px;background:#f3f4f6;padding:24px;border-radius:var(--radius);color:var(--muted);font-size:14px}
+.footer .links{display:flex;gap:12px;align-items:center}
+
+/* Lists */
+.numbered{counter-reset:items;margin:0;padding:0;list-style:none}
+.numbered li{counter-increment:items;margin:18px 0;padding-left:18px}
+.numbered li:before{content:counter(items) ". ";font-weight:700;margin-right:8px;color:var(--muted)}
+
+/* Bucket checklist */
+.checklist{list-style:none;padding:0}
+.checklist li{display:flex;align-items:center;gap:10px;padding:8px 0}
+.checklist input{width:18px;height:18px}
+
+/* Gallery */
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.gallery img{width:100%;height:280px;object-fit:cover;border-radius:6px}
+
+/* Responsive */
+@media (max-width:900px){
+  .main-layout{grid-template-columns:1fr;padding:16px}
+  .profile-sidebar{width:100%;position:static}
+  .photo-wrap{width:140px;height:180px}
+  .gallery img{height:180px}
+}
+
+/* Sticky Footer */
+html,body{height:100%}
+body{display:flex;flex-direction:column;min-height:100vh}
+
+.site-footer{margin-top:auto;background:#ececec;border-top:0.5px solid #cfcfcf;padding:25px 0 35px 0;font-size:13px;color:#6b7280;width:100%}
+.footer-container{max-width:1100px;margin:auto;padding-left:20px;padding-right:20px}
+.site-footer a{color:#4b5563;text-decoration:none}
+.site-footer a:hover{text-decoration:underline}
+.footer-follow{margin-top:8px;margin-bottom:8px}
+.footer-follow i{margin-right:6px}
+
+/* Publications */
+.publications h1{font-size:32px;margin-bottom:25px}
+.publication-item{margin-bottom:35px;padding-bottom:30px;border-bottom:1px solid #e5e7eb}
+.publication-item:last-child{border-bottom:none}
+.publication-item h3{font-size:18px;font-weight:600;margin-bottom:8px;line-height:1.5;color:#111827}
+.publication-meta{font-style:italic;color:#555;margin-bottom:6px}
+.publication-doi a{color:#2a7ae2;text-decoration:none}
+.publication-doi a:hover{text-decoration:underline}
+.publication-description{margin-top:12px;line-height:1.6;color:#444}
